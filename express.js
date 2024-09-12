@@ -1,8 +1,13 @@
 const express = require('express')
 const app = express()
 
+//morgan is a req log middleware, good for debugging and monitoring
+const morgan = require('morgan')
+
 // the server ip/domain
 app.listen(3000)
+
+app.use(morgan('tiny'))
 
 //we can routing use these function
 app.get('/', (req,res) =>{
